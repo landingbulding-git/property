@@ -1,6 +1,7 @@
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { BeforeAfterSlider } from "@/components/BeforeAfterSlider";
-import { Ruler, Flame, Eye, ArrowRight } from "lucide-react";
+import { Ruler, Flame, Eye, ArrowRight, PlayCircle, X } from "lucide-react";
 
 const items = [
   {
@@ -48,75 +49,131 @@ const items = [
 ];
 
 export function TzikTzakSection() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [videoUrl, setVideoUrl] = useState("");
+
+  const openVideo = (url: string) => {
+    setVideoUrl(url);
+    setIsModalOpen(true);
+  };
+
   return (
-    <section className="py-16 lg:py-24 bg-white overflow-hidden">
-      <div className="container mx-auto px-4">
-        <div className="space-y-24">
-          {items.map((item, index) => {
-            const isEven = index % 2 === 0;
-            const showCTA = (index + 1) % 2 === 0; // Show CTA after every 2nd item (2, 4, 6)
+    <>
+      <section className="py-16 lg:py-24 bg-white overflow-hidden">
+        <div className="container mx-auto px-4">
+          <div className="space-y-24">
+            {items.map((item, index) => {
+              const isEven = index % 2 === 0;
+              const showCTA = (index + 1) % 2 === 0; // Show CTA after every 2nd item (2, 4, 6)
 
-            return (
-              <div key={index} className={`flex flex-col gap-12 ${!isEven ? 'bg-brand-teal text-white p-8 lg:p-16 rounded-[2.5rem] shadow-xl' : ''}`}>
-                <div className={`flex flex-col lg:flex-row gap-12 items-center ${isEven ? '' : 'lg:flex-row-reverse'}`}>
-                  
-                  {/* Text Content */}
-                  <div className="flex-1 space-y-6">
-                    <h3 className={`text-3xl lg:text-4xl font-serif font-bold leading-tight ${!isEven ? 'text-white' : 'text-brand-dark'}`}>
-                      {item.title}
-                    </h3>
-                    <p className={`text-lg leading-relaxed ${!isEven ? 'text-teal-50' : 'text-gray-600'}`}>
-                      {item.description}
-                    </p>
+              return (
+                <div key={index} className={`flex flex-col gap-12 ${!isEven ? 'bg-brand-teal text-white p-8 lg:p-16 rounded-[2.5rem] shadow-xl' : ''}`}>
+                  <div className={`flex flex-col lg:flex-row gap-12 items-center ${isEven ? '' : 'lg:flex-row-reverse'}`}>
                     
-                    {/* Icon Row */}
-                    <div className={`flex flex-wrap gap-6 pt-4 border-t ${!isEven ? 'border-teal-600' : 'border-gray-100'}`}>
-                      <div className={`flex items-center gap-2 text-sm font-medium ${!isEven ? 'text-teal-50' : 'text-gray-700'}`}>
-                        <Ruler className="w-5 h-5 text-brand-gold" />
-                        <span>Belmagasság: 3,5 m</span>
+                    {/* Text Content */}
+                    <div className="flex-1 space-y-6">
+                      <h3 className={`text-3xl lg:text-4xl font-serif font-bold leading-tight ${!isEven ? 'text-white' : 'text-brand-dark'}`}>
+                        {item.title}
+                      </h3>
+                      <p className={`text-lg leading-relaxed ${!isEven ? 'text-teal-50' : 'text-gray-600'}`}>
+                        {item.description}
+                      </p>
+                      
+                      {/* Icon Row */}
+                      <div className={`flex flex-wrap gap-6 pt-4 border-t ${!isEven ? 'border-teal-600' : 'border-gray-100'}`}>
+                        <div className={`flex items-center gap-2 text-sm font-medium ${!isEven ? 'text-teal-50' : 'text-gray-700'}`}>
+                          <Ruler className="w-5 h-5 text-brand-gold" />
+                          <span>Belmagasság: 3,5 m</span>
+                        </div>
+                        <div className={`flex items-center gap-2 text-sm font-medium ${!isEven ? 'text-teal-50' : 'text-gray-700'}`}>
+                          <Flame className="w-5 h-5 text-brand-gold" />
+                          <span>Fűtés: Modernizálható</span>
+                        </div>
+                        <div className={`flex items-center gap-2 text-sm font-medium ${!isEven ? 'text-teal-50' : 'text-gray-700'}`}>
+                          <Eye className="w-5 h-5 text-brand-gold" />
+                          <span>Kilátás: Utcai</span>
+                        </div>
                       </div>
-                      <div className={`flex items-center gap-2 text-sm font-medium ${!isEven ? 'text-teal-50' : 'text-gray-700'}`}>
-                        <Flame className="w-5 h-5 text-brand-gold" />
-                        <span>Fűtés: Modernizálható</span>
-                      </div>
-                      <div className={`flex items-center gap-2 text-sm font-medium ${!isEven ? 'text-teal-50' : 'text-gray-700'}`}>
-                        <Eye className="w-5 h-5 text-brand-gold" />
-                        <span>Kilátás: Utcai</span>
+
+                      {/* Extra Button for 1st Box */}
+                      {index === 0 && (
+                        <div className="pt-4">
+                          <Button 
+                            onClick={() => openVideo("https://fgmrfarmye1aovqu.public.blob.vercel-storage.com/room1.mp4")}
+                            variant="default"
+                            className="font-bold uppercase tracking-wide flex items-center gap-2"
+                          >
+                            <PlayCircle className="w-5 h-5" />
+                            Körbejárom a szobát
+                          </Button>
+                        </div>
+                      )}
+                    </div>
+
+                    {/* Visual Content */}
+                    <div className="flex-1 w-full">
+                      <div className="shadow-2xl rounded-2xl overflow-hidden border-4 border-white">
+                        <BeforeAfterSlider
+                          beforeImage={item.beforeImage}
+                          afterImage={item.afterImage}
+                          beforeLabel="Jelenlegi állapot"
+                          afterLabel="Látványterv"
+                        />
                       </div>
                     </div>
                   </div>
 
-                  {/* Visual Content */}
-                  <div className="flex-1 w-full">
-                    <div className="shadow-2xl rounded-2xl overflow-hidden border-4 border-white">
-                      <BeforeAfterSlider
-                        beforeImage={item.beforeImage}
-                        afterImage={item.afterImage}
-                        beforeLabel="Jelenlegi állapot"
-                        afterLabel="Látványterv"
-                      />
+                  {/* Conditional CTA */}
+                  {showCTA && (
+                    <div className="flex justify-center pt-4">
+                      {index === 3 ? (
+                        <Button 
+                          variant={!isEven ? "gold" : "default"}
+                          size="lg" 
+                          onClick={() => openVideo("https://fgmrfarmye1aovqu.public.blob.vercel-storage.com/room2.mp4")}
+                          className="text-base lg:text-lg font-bold uppercase tracking-wide px-10 py-6 h-auto shadow-xl hover:shadow-2xl transform hover:-translate-y-1 transition-all group flex items-center gap-2"
+                        >
+                          <PlayCircle className="w-6 h-6 group-hover:scale-110 transition-transform" />
+                          Körbejárom a szobát
+                        </Button>
+                      ) : (
+                        <Button 
+                          variant={!isEven ? "gold" : "default"}
+                          size="lg" 
+                          className="text-base lg:text-lg font-bold uppercase tracking-wide px-10 py-6 h-auto shadow-xl hover:shadow-2xl transform hover:-translate-y-1 transition-all group flex items-center gap-2"
+                        >
+                          Kérem az ingyenes visszahívást
+                          <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                        </Button>
+                      )}
                     </div>
-                  </div>
+                  )}
                 </div>
-
-                {/* Conditional CTA */}
-                {showCTA && (
-                  <div className="flex justify-center pt-4">
-                    <Button 
-                      variant={!isEven ? "gold" : "default"}
-                      size="lg" 
-                      className="text-base lg:text-lg font-bold uppercase tracking-wide px-10 py-6 h-auto shadow-xl hover:shadow-2xl transform hover:-translate-y-1 transition-all"
-                    >
-                      Kérem az ingyenes visszahívást
-                      <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                    </Button>
-                  </div>
-                )}
-              </div>
-            );
-          })}
+              );
+            })}
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+
+      {/* Video Modal */}
+      {isModalOpen && (
+        <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/80 backdrop-blur-sm p-4">
+          <div className="relative w-full max-w-5xl aspect-video bg-black rounded-2xl overflow-hidden shadow-2xl">
+            <button 
+              onClick={() => setIsModalOpen(false)}
+              className="absolute top-4 right-4 z-10 w-10 h-10 bg-white/20 hover:bg-white/40 rounded-full flex items-center justify-center text-white transition-colors"
+            >
+              <X className="w-6 h-6" />
+            </button>
+            <video 
+              src={videoUrl} 
+              autoPlay 
+              controls 
+              className="w-full h-full object-contain"
+            />
+          </div>
+        </div>
+      )}
+    </>
   );
 }
