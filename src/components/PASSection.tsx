@@ -54,7 +54,7 @@ export function PASSection() {
             </div>
 
             {/* Solve Phase */}
-            <div className="bg-brand-dark text-white rounded-3xl p-8 lg:p-12 shadow-2xl overflow-hidden relative h-full flex flex-col justify-center">
+            <div className="bg-brand-teal text-white rounded-3xl p-8 lg:p-12 shadow-2xl overflow-hidden relative h-full flex flex-col justify-center">
               {/* Background decoration */}
               <div className="absolute top-0 right-0 w-96 h-96 bg-brand-gold/10 rounded-full blur-3xl transform translate-x-1/3 -translate-y-1/3" />
               

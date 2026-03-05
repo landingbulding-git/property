@@ -3,7 +3,7 @@ import { CheckCircle, Clock, Tag, Home } from "lucide-react";
 
 export function CloserSection() {
   return (
-    <section className="py-16 bg-brand-dark text-white relative overflow-hidden">
+    <section className="py-16 bg-brand-teal text-white relative overflow-hidden">
       {/* Background decoration */}
       <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
         <div className="absolute top-0 right-0 w-96 h-96 bg-brand-gold rounded-full blur-3xl transform translate-x-1/2 -translate-y-1/2" />

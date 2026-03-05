@@ -52,7 +52,7 @@ export function BeforeAfterSlider({
         className="absolute top-0 left-0 w-full h-full object-cover"
         draggable={false}
       />
-      <div className="absolute top-4 right-4 bg-black/60 text-white px-3 py-1 rounded-full text-xs font-medium backdrop-blur-sm z-10">
+      <div className="absolute top-4 right-4 bg-brand-teal/80 text-white px-3 py-1 rounded-full text-xs font-medium backdrop-blur-sm z-10">
         {afterLabel}
       </div>
 
@@ -67,7 +67,7 @@ export function BeforeAfterSlider({
           className="absolute top-0 left-0 w-full h-full object-cover"
           draggable={false}
         />
-        <div className="absolute top-4 left-4 bg-black/60 text-white px-3 py-1 rounded-full text-xs font-medium backdrop-blur-sm z-10">
+        <div className="absolute top-4 left-4 bg-brand-teal/80 text-white px-3 py-1 rounded-full text-xs font-medium backdrop-blur-sm z-10">
           {beforeLabel}
         </div>
       </div>
@@ -84,8 +84,8 @@ export function BeforeAfterSlider({
       
       {/* Overlay Labels (Bottom) - Optional extra info */}
       <div className="absolute bottom-4 left-4 right-4 flex justify-between text-white text-xs font-bold drop-shadow-md z-10 pointer-events-none">
-        <span className="bg-black/40 px-2 py-1 rounded">92 m²-es tágas terek</span>
-        <span className="bg-black/40 px-2 py-1 rounded">Modern amerikai konyhás nappali</span>
+        <span className="bg-brand-teal/80 px-2 py-1 rounded">92 m²-es tágas terek</span>
+        <span className="bg-brand-teal/80 px-2 py-1 rounded">Modern amerikai konyhás nappali</span>
       </div>
     </div>
   );

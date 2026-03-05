@@ -39,7 +39,7 @@ export function ProcessSection() {
 
           {steps.map((step, index) => (
             <div key={index} className="relative flex flex-col items-center text-center group">
-              <div className="w-16 h-16 bg-brand-dark text-white rounded-full flex items-center justify-center mb-6 shadow-lg group-hover:bg-brand-gold transition-colors z-10">
+              <div className="w-16 h-16 bg-brand-teal text-white rounded-full flex items-center justify-center mb-6 shadow-lg group-hover:bg-brand-gold transition-colors z-10">
                 <step.icon className="w-7 h-7" />
               </div>
               <div className="absolute top-0 right-0 bg-gray-100 text-gray-400 text-xs font-bold px-2 py-1 rounded-full -mt-2 -mr-2 md:hidden">
