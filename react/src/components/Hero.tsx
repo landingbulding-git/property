@@ -11,8 +11,8 @@ export function Hero() {
           alt="Polgári lakás eleganciája - Látványterv"
           className="w-full h-full object-cover"
         />
-        {/* Dark gradient overlay for readability */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/50 to-black/80"></div>
+        {/* Teal gradient overlay for readability */}
+        <div className="absolute inset-0 bg-gradient-to-b from-brand-teal/90 via-brand-teal/60 to-brand-teal/90"></div>
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
@@ -46,7 +46,7 @@ export function Hero() {
 
           {/* CTA Button */}
           <div className="flex flex-col items-center gap-3 lg:gap-4">
-            <Button size="lg" className="text-sm sm:text-base lg:text-lg font-bold uppercase tracking-wide px-8 py-4 lg:px-10 lg:py-6 h-auto shadow-xl hover:shadow-2xl transform hover:-translate-y-1 transition-all">
+            <Button variant="gold" size="lg" className="text-sm sm:text-base lg:text-lg font-bold uppercase tracking-wide px-8 py-4 lg:px-10 lg:py-6 h-auto shadow-xl hover:shadow-2xl transform hover:-translate-y-1 transition-all">
               Kérem az ingyenes visszahívást
             </Button>
             <p className="text-[10px] sm:text-xs text-gray-300 flex items-center justify-center gap-1 drop-shadow-sm">

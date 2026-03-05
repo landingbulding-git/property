@@ -34,10 +34,8 @@ export function Navbar() {
         {/* CTA */}
         <Button 
           size="sm" 
-          className={cn(
-            "font-bold uppercase tracking-wide shadow-md transition-all",
-            isScrolled ? "bg-brand-teal text-white hover:bg-brand-teal/90" : "bg-brand-teal text-white hover:bg-brand-teal/90"
-          )}
+          variant={isScrolled ? "default" : "gold"}
+          className="font-bold uppercase tracking-wide shadow-md transition-all"
         >
           Kérem a visszahívást
         </Button>

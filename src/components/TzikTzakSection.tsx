@@ -102,7 +102,11 @@ export function TzikTzakSection() {
                 {/* Conditional CTA */}
                 {showCTA && (
                   <div className="flex justify-center pt-4">
-                    <Button size="lg" className="text-base lg:text-lg font-bold uppercase tracking-wide px-10 py-6 h-auto shadow-xl hover:shadow-2xl transform hover:-translate-y-1 transition-all">
+                    <Button 
+                      variant={!isEven ? "gold" : "default"}
+                      size="lg" 
+                      className="text-base lg:text-lg font-bold uppercase tracking-wide px-10 py-6 h-auto shadow-xl hover:shadow-2xl transform hover:-translate-y-1 transition-all"
+                    >
                       Kérem az ingyenes visszahívást
                       <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                     </Button>

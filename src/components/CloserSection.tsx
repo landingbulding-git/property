@@ -42,7 +42,7 @@ export function CloserSection() {
         </div>
 
         <div className="max-w-md mx-auto text-center">
-            <Button size="lg" className="w-full text-base lg:text-lg font-bold uppercase tracking-wide px-8 py-6 h-auto shadow-xl hover:shadow-2xl transform hover:-translate-y-1 transition-all mb-4">
+            <Button variant="gold" size="lg" className="w-full text-base lg:text-lg font-bold uppercase tracking-wide px-8 py-6 h-auto shadow-xl hover:shadow-2xl transform hover:-translate-y-1 transition-all mb-4">
               Kérem az ingyenes visszahívást
             </Button>
             <p className="text-xs text-gray-400 flex items-center justify-center gap-1">

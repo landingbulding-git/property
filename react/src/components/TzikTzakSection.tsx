@@ -57,29 +57,29 @@ export function TzikTzakSection() {
             const showCTA = (index + 1) % 2 === 0; // Show CTA after every 2nd item (2, 4, 6)
 
             return (
-              <div key={index} className="flex flex-col gap-12">
+              <div key={index} className={`flex flex-col gap-12 ${!isEven ? 'bg-brand-teal text-white p-8 lg:p-16 rounded-[2.5rem] shadow-xl' : ''}`}>
                 <div className={`flex flex-col lg:flex-row gap-12 items-center ${isEven ? '' : 'lg:flex-row-reverse'}`}>
                   
                   {/* Text Content */}
                   <div className="flex-1 space-y-6">
-                    <h3 className="text-3xl lg:text-4xl font-serif font-bold text-brand-dark leading-tight">
+                    <h3 className={`text-3xl lg:text-4xl font-serif font-bold leading-tight ${!isEven ? 'text-white' : 'text-brand-dark'}`}>
                       {item.title}
                     </h3>
-                    <p className="text-lg text-gray-600 leading-relaxed">
+                    <p className={`text-lg leading-relaxed ${!isEven ? 'text-teal-50' : 'text-gray-600'}`}>
                       {item.description}
                     </p>
                     
                     {/* Icon Row */}
-                    <div className="flex flex-wrap gap-6 pt-4 border-t border-gray-100">
-                      <div className="flex items-center gap-2 text-sm font-medium text-gray-700">
+                    <div className={`flex flex-wrap gap-6 pt-4 border-t ${!isEven ? 'border-teal-600' : 'border-gray-100'}`}>
+                      <div className={`flex items-center gap-2 text-sm font-medium ${!isEven ? 'text-teal-50' : 'text-gray-700'}`}>
                         <Ruler className="w-5 h-5 text-brand-gold" />
                         <span>Belmagasság: 3,5 m</span>
                       </div>
-                      <div className="flex items-center gap-2 text-sm font-medium text-gray-700">
+                      <div className={`flex items-center gap-2 text-sm font-medium ${!isEven ? 'text-teal-50' : 'text-gray-700'}`}>
                         <Flame className="w-5 h-5 text-brand-gold" />
                         <span>Fűtés: Modernizálható</span>
                       </div>
-                      <div className="flex items-center gap-2 text-sm font-medium text-gray-700">
+                      <div className={`flex items-center gap-2 text-sm font-medium ${!isEven ? 'text-teal-50' : 'text-gray-700'}`}>
                         <Eye className="w-5 h-5 text-brand-gold" />
                         <span>Kilátás: Utcai</span>
                       </div>
@@ -102,7 +102,11 @@ export function TzikTzakSection() {
                 {/* Conditional CTA */}
                 {showCTA && (
                   <div className="flex justify-center pt-4">
-                    <Button size="lg" className="text-base lg:text-lg font-bold uppercase tracking-wide px-10 py-6 h-auto shadow-xl hover:shadow-2xl transform hover:-translate-y-1 transition-all">
+                    <Button 
+                      variant={!isEven ? "gold" : "default"}
+                      size="lg" 
+                      className="text-base lg:text-lg font-bold uppercase tracking-wide px-10 py-6 h-auto shadow-xl hover:shadow-2xl transform hover:-translate-y-1 transition-all"
+                    >
                       Kérem az ingyenes visszahívást
                       <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                     </Button>
