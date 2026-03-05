@@ -2,9 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 
 // Import React components and mark them as islands for client-side interactivity.
-// Using 'client:visible' as a default for animations and sections that appear on scroll.
-
-// Note: If a component is purely static and does not require client-side JS, it could potentially be converted to an .astro component or use a different hydration strategy like 'client:idle' or 'client:static'.
+// Using 'client:load' for TzikTzakSection to ensure it hydrates early.
 
 import Navbar from '../components/Navbar.tsx?component-island';
 import Hero from '../components/Hero.tsx?component-island';
@@ -26,7 +24,7 @@ import Footer from '../components/Footer.tsx?component-island';
     <Navbar client:visible />
     <Hero client:visible />
     <PASSection client:visible />
-    <TzikTzakSection client:visible />
+    <TzikTzakSection client:load /> {/* Changed to client:load */}
     <ComparisonSection client:visible />
     <ValueProps client:visible />
     <ProcessSection client:visible />

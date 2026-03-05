@@ -88,14 +88,32 @@ export function TzikTzakSection() {
 
                   {/* Visual Content */}
                   <div className="flex-1 w-full">
-                    <div className="shadow-2xl rounded-2xl overflow-hidden border-4 border-white">
-                      <BeforeAfterSlider
-                        beforeImage={item.beforeImage}
-                        afterImage={item.afterImage}
-                        beforeLabel="Jelenlegi állapot"
-                        afterLabel="Látványterv"
-                      />
-                    </div>
+                    {/* TEMPORARY CHANGE FOR DIAGNOSIS */}
+                    {index === 0 ? (
+                      <div className="flex gap-4">
+                        <img
+                          src={item.beforeImage}
+                          alt="Before renovation - Diagnostic View"
+                          className="w-1/2 h-auto object-cover rounded-xl shadow-2xl border-4 border-white"
+                          draggable={false}
+                        />
+                        <img
+                          src={item.afterImage}
+                          alt="After renovation - Diagnostic View"
+                          className="w-1/2 h-auto object-cover rounded-xl shadow-2xl border-4 border-white"
+                          draggable={false}
+                        />
+                      </div>
+                    ) : (
+                      <div className="shadow-2xl rounded-2xl overflow-hidden border-4 border-white">
+                        <BeforeAfterSlider
+                          beforeImage={item.beforeImage}
+                          afterImage={item.afterImage}
+                          beforeLabel="Jelenlegi állapot"
+                          afterLabel="Látványterv"
+                        />
+                      </div>
+                    )}
                   </div>
                 </div>
 
