@@ -36,7 +36,7 @@ export function Navbar() {
           size="sm" 
           className={cn(
             "font-bold uppercase tracking-wide shadow-md transition-all",
-            isScrolled ? "bg-brand-accent text-white hover:bg-brand-accent/90" : "bg-brand-dark text-white hover:bg-brand-dark/90"
+            isScrolled ? "bg-brand-teal text-white hover:bg-brand-teal/90" : "bg-brand-teal text-white hover:bg-brand-teal/90"
           )}
         >
           Kérem a visszahívást

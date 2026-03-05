@@ -13,7 +13,7 @@ export function ComparisonSection() {
         <div className="max-w-4xl mx-auto overflow-hidden rounded-xl shadow-lg border border-gray-100">
           <table className="w-full text-left border-collapse">
             <thead>
-              <tr className="bg-brand-dark text-white">
+              <tr className="bg-brand-teal text-white">
                 <th className="p-4 sm:p-6 font-serif text-lg">Jellemző</th>
                 <th className="p-4 sm:p-6 font-serif text-lg bg-brand-gold/20">Hernád utcai ingatlan</th>
                 <th className="p-4 sm:p-6 font-serif text-lg opacity-80">Piaci átlag</th>

@@ -63,7 +63,7 @@ export function PASSection() {
                   <div className="w-12 h-12 bg-brand-gold rounded-full flex items-center justify-center shrink-0 text-brand-dark">
                     <Lightbulb className="w-6 h-6" />
                   </div>
-                  <h3 className="text-2xl lg:text-3xl font-serif font-bold text-brand-gold">
+                  <h3 className="text-2xl lg:text-3xl font-serif font-bold text-white">
                     Az Új Mechanizmus – Lássa a Jövőt, Mielőtt Megvenné
                   </h3>
                 </div>
@@ -77,7 +77,7 @@ export function PASSection() {
                     { title: "Értékálló alapok", desc: "Az impozáns épület, a frissen felújított mozaikcsempés lépcsőház és a kiváló közlekedés garantálja, hogy befektetése hosszú távon is kamatozik." }
                   ].map((item, i) => (
                     <li key={i} className="flex gap-3">
-                      <CheckCircle2 className="w-5 h-5 text-brand-gold shrink-0 mt-1" />
+                      <CheckCircle2 className="w-5 h-5 text-white shrink-0 mt-1" />
                       <div>
                         <strong className="text-white block">{item.title}:</strong>
                         <span className="text-gray-400">{item.desc}</span>

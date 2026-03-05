@@ -1,6 +1,6 @@
 export function ExpertSection() {
   return (
-    <section className="py-16 bg-brand-dark text-white">
+    <section className="py-16 bg-brand-teal text-white">
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row items-center gap-12 max-w-5xl mx-auto">
           <div className="w-full md:w-1/3">
